@@ -9,6 +9,6 @@ class MyAttribute
 
     public function __construct($data1)
     {
-        $this->data1 = $this->data1;
+        $this->data1 = $data1;
     }
 }

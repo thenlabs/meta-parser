@@ -12,7 +12,8 @@
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.2",
         "thenlabs/pyramidal-tests": "2.0.x-dev",
-        "thenlabs/snapshots-comparator": "dev-main"
+        "thenlabs/snapshots-comparator": "dev-main",
+        "doctrine/annotations": "^1.13"
     },
     "autoload": {
         "psr-4": {

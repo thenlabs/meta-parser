@@ -3,3 +3,4 @@ vendor/
 !.editorconfig
 !.gitignore
 !.php-cs-fixer.dist.php
+!.travis.yml
