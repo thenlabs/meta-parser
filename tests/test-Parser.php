@@ -8,6 +8,8 @@ test(function () {
     $parser = new Parser();
     $result = $parser->parse(new ReflectionClass(MyClass::class));
 
-    $this->assertEquals('value1000', $result->get(MyAnnotation::class)->get('data1'));
+    $data1Expected = version_compare(phpversion(), '8.0', '<') ? 'value11' : 'value1000';
+
+    $this->assertEquals($data1Expected, $result->get(MyAnnotation::class)->get('data1'));
     $this->assertNull($result->get(MyAnnotation::class)->get('data2'));
 });
