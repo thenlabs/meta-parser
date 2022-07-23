@@ -37,7 +37,7 @@ class Parser implements ParserInterface
         $this->parsers = $parsers;
     }
 
-    public function parse(Reflector $reflector): MetadataList
+    public function parse(Reflector $reflector): Metadata
     {
         $result = [];
 
