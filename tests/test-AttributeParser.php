@@ -1,5 +1,9 @@
 <?php
 
+if (version_compare(phpversion(), '8.0', '<')) {
+    return;
+}
+
 use ThenLabs\MetaParser\AttributeParser;
 use ThenLabs\MetaParser\Tests\MyAttribute;
 use ThenLabs\MetaParser\Tests\MyClass;
