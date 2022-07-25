@@ -21,14 +21,12 @@ class MetadataList extends Metadata
 
     public function get(string $name)
     {
-        $result = null;
-
         foreach ($this->data as $result) {
             if ($result->has($name)) {
                 return $result->get($name);
             }
         }
 
-        return $result;
+        return null;
     }
 }
