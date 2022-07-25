@@ -5,6 +5,7 @@ namespace ThenLabs\MetaParser;
 
 use Doctrine\Common\Annotations\AnnotationReader;
 use Reflector;
+use ThenLabs\MetaParser\Exception\NoParserFoundException;
 
 /**
  * @author Andy Daniel Navarro Taño <andaniel05@gmail.com>
@@ -37,8 +38,17 @@ class Parser implements ParserInterface
         $this->parsers = $parsers;
     }
 
+    /**
+     * @param Reflector $reflector
+     * @return Metadata
+     * @throws NoParserFoundException
+     */
     public function parse(Reflector $reflector): Metadata
     {
+        if (empty($this->parsers)) {
+            throw new NoParserFoundException();
+        }
+
         $result = [];
 
         foreach ($this->parsers as $parser) {

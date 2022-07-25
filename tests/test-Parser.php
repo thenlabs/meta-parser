@@ -1,5 +1,6 @@
 <?php
 
+use ThenLabs\MetaParser\Exception\NoParserFoundException;
 use ThenLabs\MetaParser\Parser;
 use ThenLabs\MetaParser\Tests\MyAnnotation;
 use ThenLabs\MetaParser\Tests\MyClass;
@@ -12,4 +13,13 @@ test(function () {
 
     $this->assertEquals($data1Expected, $result->get(MyAnnotation::class)->get('data1'));
     $this->assertNull($result->get(MyAnnotation::class)->get('data2'));
+});
+
+test(function () {
+    $this->expectException(NoParserFoundException::class);
+
+    $parser = new Parser();
+    $parser->setParsers([]);
+
+    $parser->parse(new ReflectionClass('stdClass'));
 });
