@@ -57,6 +57,7 @@ $parserResult->get(MyMetadata::class)->get('data1') === 'value2';
     $ composer require doctrine/annotations
 
 #### 2. The attribute parser require a PHP version grater than 8.0.
+#### 3. The `parse()` methods accept an instance of `Reflector`, so that, for parse a method of a class(for example), you can use a `ReflectionMethod` instance.
 
 ## Development.
 
